@@ -1,0 +1,63 @@
+<div id="body">
+  <div class="top">
+    <%= get_windows(@page.id, 0) %>
+  </div>
+  <!--end top col-->
+
+  <% if @page.column_1_count > 0 %>
+      <% width = ((@page.column_1_count.to_f / 6) * 100) %>
+      <div class="flt-lft center width-<%= @page.column_1_count %>-sixth" style="width:<%= width %>%">
+        <%= get_windows(@page.id, 1) %>
+      </div>
+      <!--end col 1 -->
+  <% end %>
+
+  <% if @page.column_2_count > 0 %>
+      <% width = ((@page.column_2_count.to_f / 6) * 100) %>
+      <div class="flt-lft center width-<%= @page.column_2_count %>-sixth" style="width:<%= width %>%">
+        <%= get_windows(@page.id, 2) %>
+      </div>
+      <!--end col 2 -->
+  <% end %>
+
+  <% if @page.column_3_count > 0 %>
+      <% width = ((@page.column_3_count.to_f / 6) * 100) %>
+      <div class="flt-lft center width-<%= @page.column_3_count %>-sixth" style="width:<%= width %>%">
+        <%= get_windows(@page.id, 3) %>
+      </div>
+      <!--end col 3 -->
+  <% end %>
+
+  <% if @page.column_4_count > 0 %>
+      <% width = ((@page.column_4_count.to_f / 6) * 100) %>
+      <div class="flt-lft center width-<%= @page.column_4_count %>-sixth" style="width:<%= width %>%">
+        <%= get_windows(@page.id, 4) %>
+      </div>
+      <!--end col 4 -->
+  <% end %>
+
+  <% if @page.column_5_count > 0 %>
+      <% width = ((@page.column_5_count.to_f / 6) * 100) %>
+      <div class="flt-lft center width-<%= @page.column_5_count %>-sixth" style="width:<%= width %>%">
+        <%= get_windows(@page.id, 5) %>
+      </div>
+      <!--end col 5 -->
+  <% end %>
+
+  <% if @page.column_6_count > 0 %>
+      <% width = ((@page.column_6_count.to_f / 6) * 100) %>
+      <div class="flt-lft center width-<%= @page.column_6_count %>-sixth" style="width:<%= width %>%">
+        <%= get_windows(@page.id, 6) %>
+      </div>
+      <!--end col 6 -->
+  <% end %>
+
+
+
+  <br class="clear"/>
+
+  <div class="bottom">
+    <%= get_windows(@page.id, -1) %>
+  </div>
+  <!--end bottom col-->
+</div>

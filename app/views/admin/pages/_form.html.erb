@@ -1,0 +1,72 @@
+<%= semantic_form_for [:admin, @page] do |f| %>
+    <%= f.inputs do %>
+        <%= f.input :name %>
+        <%= f.input :position %>
+        <%= f.input :active %>
+        <%= f.input :default %>
+
+
+
+        <li class="" id="">
+          <label id="column_layout_label" class=' input label'>Page Layout</label>
+
+          <div id="column_layout" class='flt-lft'>
+            <div class='flt-lft column_layout' id='column_layout_1'>
+              <div class='column_layout_inner'>Column 1</div>
+            </div>
+            <div class='flt-lft column_layout' id='column_layout_2'>
+              <div class='column_layout_inner'>Column 2</div>
+            </div>
+            <div class='flt-lft column_layout' id='column_layout_3'>
+              <div class='column_layout_inner'>Column 3</div>
+            </div>
+            <div class='flt-lft column_layout' id='column_layout_4'>
+              <div class='column_layout_inner'>Column 4</div>
+            </div>
+            <div class='flt-lft column_layout' id='column_layout_5'>
+              <div class='column_layout_inner'>Column 5</div>
+            </div>
+            <div class='flt-lft column_layout' id='column_layout_6'>
+              <div class='column_layout_inner'>Column 6</div>
+            </div>
+          </div>
+          <br class='clear'>
+          <br>
+        </li>
+
+        <%= f.input :column_1_count, :as => :range,
+                    :in => (0..6),
+                    :step => 1,
+                    :input_html => {:class => 'column_count_slider'} %>
+        <%= f.input :column_2_count, :as => :range,
+                    :in => (0..6),
+                    :step => 1,
+                    :input_html => {:class => 'column_count_slider hidden'} %>
+        <%= f.input :column_3_count, :as => :range,
+                    :in => (0..6),
+                    :step => 1,
+                    :input_html => {:class => 'column_count_slider hidden'} %>
+        <%= f.input :column_4_count, :as => :range,
+                    :in => (0..6),
+                    :step => 1,
+                    :input_html => {:class => 'column_count_slider hidden'} %>
+        <%= f.input :column_5_count, :as => :range,
+                    :in => (0..6),
+                    :step => 1,
+                    :input_html => {:class => 'column_count_slider hidden'} %>
+        <%= f.input :column_6_count, :as => :range,
+                    :in => (0..6),
+                    :step => 1,
+                    :input_html => {:class => 'column_count_slider hidden'} %>
+
+
+        <!--<%= f.input :column_1_count, :as => :hidden, :class => 'column_count_slider' %>-->
+        <!--<%= f.input :column_2_count, :as => :hidden, :class => 'column_count_slider' %>-->
+        <!--<%= f.input :column_3_count, :as => :hidden, :class => 'column_count_slider' %>-->
+        <!--<%= f.input :column_4_count, :as => :hidden, :class => 'column_count_slider' %>-->
+        <!--<%= f.input :column_5_count, :as => :hidden, :class => 'column_count_slider' %>-->
+        <!--<%= f.input :column_6_count, :as => :hidden, :class => 'column_count_slider' %>-->
+
+        <%= f.submit :commit %>
+    <% end %>
+<% end %>

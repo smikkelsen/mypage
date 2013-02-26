@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #000;
+
+  body {
+    padding: 15px 40px;
+
+    #body {
+
+      padding: 30px;
+      font: 100%/1.4 papyrus, tahoma, arial, helvetica, lucida sans, sans-serif;
+      border: 1px solid #999;
+      background: url('ant.gif') top left no-repeat #2E2B2C;
+      position: relative;
+    }
+
+  }
+
+}
+
+.chosen {
+  width: 100%;
+}
+
+ul {
+  margin-left: 15px;
+  padding: 0;
+  list-style: none;
+
+  aliases, projects, tools {
+    list-style: none;
+    line-height: 20px;
+  }
+
+}
+
+.top {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0px;
+  padding: 0 14px;
+}
+
+.center {
+  margin: 0px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.bottom {
+  width: 100%;
+  margin: 0px;
+  padding: 14px 0px;
+  box-sizing: border-box;
+
+
+  .panel {
+    width: 98%;
+    margin: 0px auto 15px auto;
+    box-sizing: border-box;
+  }
+}
+
+
+
+.dev a {
+  color: #3F4F26;
+}
+
+.beta a {
+  color: #273869;
+}
+
+.prod a {
+  color: #571313;
+}
+
+li.sub_links {
+  font-style: italic;
+  margin: 0 3px;
+}
+
+.sub_categories, .button {
+  padding: 0 6px;
+  border: 1px solid #464a4e;
+  /*** Rounded Corners ***/
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+
+  /*** Shadow behind the box ***/
+  -moz-box-shadow: 0px -5px 300px #b4b0b3;
+  -webkit-box-shadow: 0px -5px 300px #b4b0b3;
+}
+
+li.fl {
+  list-style-type: none !important;
+  float: left !important;
+
+}
+
+li.pi-left-col {
+  width: 20% !important;
+  font-size: .9em !important;
+}
+
+li.pi-right-col {
+
+  text-align: center !important;
+}
+
+li.pi-row-separator {
+  height: 1px;
+  kborder-bottom: 1px dotted #707070 !important;
+  width: 90% !important;
+  padding: 3px 0 0 0;
+  margin: 0 0 3px 0;
+}
+
+.clear {
+  clear: both !important;
+  height: 1px;
+}
+

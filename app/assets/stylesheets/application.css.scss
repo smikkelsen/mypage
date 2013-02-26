@@ -1,0 +1,40 @@
+@import 'pages';
+@import 'flyout';
+@import 'tipTip';
+@import 'google_search';
+@import 'search_all';
+@import 'windows';
+
+// Global Styles
+
+.clear {
+  clear: both;
+}
+
+a {
+  color: #024378;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: #04569A;
+    text-decoration: underline;
+  }
+}
+
+.flt-lft {
+  float: left;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.clickable {
+  cursor: pointer;
+  cursor: hand;
+}

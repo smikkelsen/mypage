@@ -1,0 +1,48 @@
+
+h2 {
+  margin-bottom: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.collapse {
+  cursor: hand;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+}
+
+.panel-insert-table table {
+  margin-left: 15px;
+}
+
+
+.panel-insert {
+  margin: 15px;
+}
+
+.panel {
+  width: 100%;
+  margin: 0px;
+  padding: 0;
+  border: 1px solid #434344;
+  color: #3b3b3b;
+  font-size: 1em;
+
+  /*** Adding in CSS3 ***/
+
+  /*** Rounded Corners ***/
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  /*** Background Gradient - 2 declarations one for Firefox and one for Webkit ***/
+  background: -moz-linear-gradient(19% 75% 90deg, #686868, #C2C2C2);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C2C2C2), to(#686868));
+
+  /*** Shadow behind the box ***/
+  -moz-box-shadow: 0px -5px 300px #b4b0b3;
+  -webkit-box-shadow: 0px -5px 300px #b4b0b3;
+
+}
