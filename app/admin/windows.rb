@@ -4,6 +4,7 @@ ActiveAdmin.register Window do
   menu :priority => 20
   # ===================== BATCH ACTIONS =====================
 
+  active_admin_importable
 
   # ========================= FILTERS =========================
   filter :name

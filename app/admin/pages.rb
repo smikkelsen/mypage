@@ -3,6 +3,7 @@ ActiveAdmin.register Page do
   menu :priority => 10
   # ===================== BATCH ACTIONS =====================
 
+  active_admin_importable
 
   # ========================= FILTERS =========================
   filter :name
@@ -16,13 +17,24 @@ ActiveAdmin.register Page do
     column :position
     column :active
     column :default
-    column :column_1_count
-    column :column_2_count
-    column :column_3_count
-    column :column_4_count
-    column :column_5_count
-    column :column_6_count
-
+    column 'col 1' do |c|
+      c.column_1_count
+    end
+    column 'col 2' do |c|
+      c.column_2_count
+    end
+    column 'col 3' do |c|
+      c.column_3_count
+    end
+    column 'col 4' do |c|
+      c.column_4_count
+    end
+    column 'col 5' do |c|
+      c.column_5_count
+    end
+    column 'col 6' do |c|
+      c.column_6_count
+    end
 
     default_actions
   end

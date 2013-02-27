@@ -4,7 +4,7 @@ ActiveAdmin.register Icon do
   menu :priority => 40
   # ===================== BATCH ACTIONS =====================
 
-
+  active_admin_importable
   # ========================= FILTERS =========================
   filter :name
   filter :value

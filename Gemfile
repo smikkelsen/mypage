@@ -6,6 +6,7 @@ gem 'mysql2'
 
 gem 'coffee-script-source', '~> 1.4.0' # require older version until activeadmin updates broken assets
 gem 'activeadmin'
+gem 'active_admin_importable'
 
 gem 'chosen-rails'
 

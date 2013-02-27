@@ -4,6 +4,7 @@ ActiveAdmin.register WindowItem do
   menu :priority => 10, :parent => 'Windows'
   # ===================== BATCH ACTIONS =====================
 
+  active_admin_importable
 
   # ========================= FILTERS =========================
   filter :page
