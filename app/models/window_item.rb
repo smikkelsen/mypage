@@ -5,13 +5,13 @@ class WindowItem < ActiveRecord::Base
   belongs_to :icon
   belongs_to :window
 
-  belongs_to :parent_item, :class_name => 'WindowItem'
+  belongs_to :parent_window_item, :class_name => 'WindowItem'
   has_many :child_items, :foreign_key => 'parent_window_item_id', :class_name => 'WindowItem'
   accepts_nested_attributes_for :child_items, :allow_destroy => true
 
   validates :name, :presence => true, :length => {:maximum => 50}
   #validates :parent_window_item_id, :presence => true
-  validates :window_id, :presence => true
+  validates :window_id, :presence => true, :if => Proc.new { |o| o.parent_window_item_id.nil? }
   validates :position, :presence => true, :length => {:maximum => 3}
 
   CHILDREN_LAYOUT_OPTIONS = {:Horizontal => 'list-horizontal', :Vertical => 'list-vertical'}

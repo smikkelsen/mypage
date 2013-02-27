@@ -93,7 +93,7 @@ ActiveAdmin.register WindowItem do
 
     f.inputs "Sub Items" do
       f.has_many :child_items do |a|
-        a.input :window_id, :as => :hidden, :value => window_item.window_id
+        #a.input :window_id, :as => :hidden, :value => window_item.window_id
         a.input :name
         a.input :position
         a.input :link
