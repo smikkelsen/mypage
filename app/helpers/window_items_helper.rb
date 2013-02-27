@@ -18,7 +18,7 @@ module WindowItemsHelper
         text += '  </div>'
       end
     else
-      text += "<div class='aa_flyout button'><a class='category_link' href='#{item.link}'>#{item.name}</a>"
+      text += "<div class='#{parent_layout} window-item-parent aa_flyout button clickable'><a class='category_link' href='#{item.link}'>#{item.name}</a>"
     end
 
     text += '</div>'
