@@ -91,6 +91,7 @@ ActiveAdmin.register Window do
         a.input :hover_text
         a.input :active, :as => :boolean
         a.input :icon_id, :as => :select, :collection => Icon.all.select
+        a.input :children_layout, :as => :select, :collection => WindowItem::CHILDREN_LAYOUT_OPTIONS
 
 
         #f.input :window
