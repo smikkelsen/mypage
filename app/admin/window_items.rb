@@ -77,7 +77,7 @@ ActiveAdmin.register WindowItem do
   form do |f|
     f.inputs "Window Details" do
       f.input :window
-      f.input :parent_window_item_id
+      f.input :parent_window_item
       f.input :name
       f.input :position
       f.input :link
