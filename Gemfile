@@ -3,7 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 
 gem 'mysql2'
+
+gem 'coffee-script-source', '~> 1.4.0' # require older version until activeadmin updates broken assets
 gem 'activeadmin'
+
 gem 'chosen-rails'
 
 group :assets do
