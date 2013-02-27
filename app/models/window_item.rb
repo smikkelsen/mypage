@@ -9,7 +9,7 @@ class WindowItem < ActiveRecord::Base
   has_many :child_items, :foreign_key => 'parent_window_item_id', :class_name => 'WindowItem'
   accepts_nested_attributes_for :child_items, :allow_destroy => true
 
-  validates :name, :presence => true, :length => {:maximum => 32}
+  validates :name, :presence => true, :length => {:maximum => 50}
   #validates :parent_window_item_id, :presence => true
   validates :window_id, :presence => true
   validates :position, :presence => true, :length => {:maximum => 3}
