@@ -67,9 +67,14 @@ module WindowsHelper
 
   def hover_text_if(text)
     "title='#{text}'" unless text.empty? || text.nil?
+  rescue
+    ''
   end
 
   def hover_class_if(text)
     ' tooltip ' unless text.empty? || text.nil?
+  rescue
+    ''
   end
+
 end
