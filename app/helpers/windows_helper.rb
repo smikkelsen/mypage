@@ -34,7 +34,7 @@ module WindowsHelper
           text += '            <tr class="searchable">'
 
           text += '              <td>'
-          text += "                #{render_icon(item.icon_id, 18, styles = 'padding-right:5px;')}<span #{hover_text_if(item.hover_text)} class='#{hover_class_if(item.hover_text)}'>#{link_to_unless item.link.empty?, item.name, item.link }</span>"
+          text += "                #{render_icon(item.icon_id, 18, styles = 'padding-right:5px;')}<span #{hover_text_if(item.hover_text)} class='#{hover_class_if(item.hover_text)}'>#{link_to_unless item.link.empty?, item.name, item.link rescue '' }</span>"
           text += '              </td>'
           sub_items = WindowItem.by_parent(item.id).active
           unless sub_items.nil?
