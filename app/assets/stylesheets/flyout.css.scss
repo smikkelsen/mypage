@@ -11,10 +11,8 @@
     position: relative;
   }
 
-
-
   .dropdown_menu_list_wrapper {
-
+    cursor: default;
     display: none;
     position: absolute;
     left: -50px;
@@ -43,9 +41,8 @@
 
   }
 
-
-
 }
+
 .list-horizontal {
   float: left;
 }
@@ -59,4 +56,10 @@
   margin: 0px !important;
   padding: 0px;
   list-style-type: none;
+}
+
+.settings {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
