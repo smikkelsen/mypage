@@ -33,7 +33,7 @@ module WindowsHelper
 
     text += "          <table>\r\n"
 
-    window_items = WindowItem.by_window(window.id).is_parent.active
+    window_items = WindowItem.by_window(window.id).is_parent.active.active.order('position, name ASC')
     window_items.in_groups_of(window.column_count) do |row|
       text += "            <tr class='searchable'>\r\n"
       row.each do |item|
@@ -44,9 +44,9 @@ module WindowsHelper
 
           text += "                #{render_icon(item.icon_id, 18, styles = 'padding-right:5px;')}<span #{hover_text_if(item.hover_text)} class='#{hover_class_if(item.hover_text)}'>#{link_to_unless item.link.empty?, item.name, item.link rescue '' }</span>\r\n"
           text += "              </td>\r\n"
-          sub_items = WindowItem.by_parent(item.id).active
+          sub_items = WindowItem.by_parent(item.id).active.active.order('position, name ASC')
           unless sub_items.nil?
-            text += "              <td>\r\n"
+            text += "              <td class='sub-items-col'>\r\n"
             sub_items.each do |sub|
               text += aa_flyout(sub, item.children_layout)
             end

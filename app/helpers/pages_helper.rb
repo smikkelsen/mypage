@@ -2,7 +2,7 @@ require 'enumerator' # for in_groups_of method
 module PagesHelper
   def get_windows(page_id, column_position)
     text = ''
-    windows = Window.by_page(page_id).by_column(column_position).active
+    windows = Window.by_page(page_id).by_column(column_position).active.order('page_position, name ASC')
 
 
     windows.each do |window|

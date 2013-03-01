@@ -58,22 +58,24 @@ ActiveAdmin.register Page do
       row :updated_at
     end
 
-    #div :class => "accordion" do
-    #  if site.site_attributes.count > 0
-    #    panel "Site Attributes (#{site.site_attributes.count})" do
-    #
-    #      table_for site.site_attributes do
-    #
-    #        column "Name" do |a|
-    #          link_to a.name, site_attribute_path(a.id)
-    #        end
-    #        column :value
-    #
-    #      end
-    #
-    #    end
-    #  end
-    #end # end accordion
+    div :class => "accordion" do
+      if page.windows.count > 0
+        panel "Windows (#{page.windows.count})" do
+
+          table_for page.windows do
+
+            column "Name" do |a|
+              link_to a.name, site_attribute_path(a.id)
+            end
+            column :active
+            column :window_type
+            column :page_position
+            column :column_position
+          end
+
+        end
+      end
+    end # end accordion
 
   end
 

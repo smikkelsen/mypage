@@ -3,9 +3,9 @@ module WindowItemsHelper
   def aa_flyout(item, parent_layout)
     text = ''
     if item.link.empty?
-      text += "<div class='#{parent_layout} window-item-parent aa_flyout button clickable'>#{item.name}\r\n"
+      text += "<div class='#{parent_layout} window-item-parent aa_flyout button clickable' style='#{set_color(item.font_color)}'>#{item.name}\r\n"
 
-      sub_items = WindowItem.by_parent(item.id).active
+      sub_items = WindowItem.by_parent(item.id).active.active.order('position, name ASC')
       unless sub_items.nil?
         text += "  <div class='dropdown_menu_list_wrapper' style='display: none; '>\r\n"
         text += link_to (image_tag 'settings_lt.png', :class => 'settings flt-rt', :width => '15px'), admin_window_item_path(item.id), :target => '_blank'
@@ -22,7 +22,7 @@ module WindowItemsHelper
 
     else
       #text += link_to "<div class='#{parent_layout} window-item-parent aa_flyout button clickable'>#{item.name}", item.link
-      text += "<a class='category_link' href='#{item.link}'><div class='#{parent_layout} window-item-parent aa_flyout button clickable'>#{item.name}</div></a>\r\n"
+      text += "<a class='category_link' href='#{item.link}'><div class='#{parent_layout} window-item-parent aa_flyout button_link clickable'>#{item.name}</div></a>\r\n"
     end
 
   end

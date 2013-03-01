@@ -65,35 +65,9 @@ ul {
   }
 }
 
-
-
-.dev a {
-  color: #3F4F26;
-}
-
-.beta a {
-  color: #273869;
-}
-
-.prod a {
-  color: #571313;
-}
-
 li.sub_links {
   font-style: italic;
   margin: 0 3px;
-}
-
-.sub_categories, .button {
-  padding: 0 6px;
-  border: 1px solid #464a4e;
-  /*** Rounded Corners ***/
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-
-  /*** Shadow behind the box ***/
-  -moz-box-shadow: 0px -5px 300px #b4b0b3;
-  -webkit-box-shadow: 0px -5px 300px #b4b0b3;
 }
 
 li.fl {

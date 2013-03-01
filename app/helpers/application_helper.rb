@@ -3,4 +3,8 @@ module ApplicationHelper
     icon = Icon.find_by_id(icon_id)
     image_tag "data:image/jpeg;base64,#{icon.value}", :style => "max-height: #{height}px; #{styles}".html_safe unless icon.nil?
   end
+
+  def set_color(color)
+    "color: #{color};" unless color.empty? || color.nil?
+  end
 end
