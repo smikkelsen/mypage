@@ -20,7 +20,7 @@ class PagesController < ApplicationController
           @page = Page.first
         end
       end
-      @pages = Page.all
+      @pages = Page.order('position, name ASC').all
 
     end
   end

@@ -5,7 +5,7 @@ module WindowsHelper
     text += "<div style='margin:6px 0px' >\r\n"
     text += "<form id='google-search'>\r\n"
     text += "<input type='text' class='input' id='search_string' name='search_string' tabindex='1' >"
-    text += "<button id='gbqfba' class='submit_button' aria-label='Google Search' name='btnK' style='margin:0' >Google Search</button>\r\n"
+    text += "<button id='gbqfba' class='submit_button' aria-label='Google Search' name='btnK' style='margin:0' >Search</button>\r\n"
     text += "</form>\r\n"
     text += "</div>\r\n"
   end
@@ -21,7 +21,7 @@ module WindowsHelper
     text += "      <tr class='panel-heading'>\r\n"
     text += "        <td colspan=#{window.column_count}>#{render_icon(window.icon_id, 25, styles = 'float:left; padding: 5px;')}\r\n"
     text += "          <h2>#{window.name}"
-    text += link_to (image_tag 'settings_dk.png', :class => 'flt-rt', :width => '20px'), admin_window_path(window.id), :target => '_blank'
+    text += link_to (image_tag 'settings_dk.png', :class => 'flt-rt settings-panel', :width => '20px'), admin_window_path(window.id), :target => '_blank'
 
     text += "</h2></td>\r\n"
 

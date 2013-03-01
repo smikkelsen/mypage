@@ -1,6 +1,12 @@
 <div id="body">
   <%= link_to (image_tag 'settings_lt.png', :class => 'settings flt-rt', :width => '25px'), admin_page_path(@page.id), :target => '_blank' %>
 
+  <div class="pages-container">
+    <% @pages.each do |page| %>
+        <%= link_to "<div class='page-button clickable #{'active' if @page.id == page.id}'>#{page.name}</div>".html_safe, page_path(page.id) %>
+    <% end %>
+  </div>
+
   <div class="top">
     <%= get_windows(@page.id, 0) %>
   </div>
