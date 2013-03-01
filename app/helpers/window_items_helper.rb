@@ -22,7 +22,7 @@ module WindowItemsHelper
 
     else
       #text += link_to "<div class='#{parent_layout} window-item-parent aa_flyout button clickable'>#{item.name}", item.link
-      text += "<a class='category_link' href='#{item.link}'><div class='#{parent_layout} window-item-parent aa_flyout button_link clickable'>#{item.name}</div></a>\r\n"
+      text += "<a class='category_link' href='#{item.link}'><div class='#{set_color(item.font_color)} #{parent_layout} window-item-parent aa_flyout button_link clickable'>#{item.name}</div></a>\r\n"
     end
 
   end

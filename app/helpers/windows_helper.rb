@@ -37,7 +37,7 @@ module WindowsHelper
     window_items.in_groups_of(window.column_count) do |row|
       text += "            <tr class='searchable'>\r\n"
       row.each do |item|
-        text += "              <td>\r\n"
+        text += "              <td class='items-col'>\r\n"
 
         unless item.nil?
 
