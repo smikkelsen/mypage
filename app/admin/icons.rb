@@ -9,6 +9,9 @@ ActiveAdmin.register Icon do
   filter :name
   filter :value
 
+  action_item :only => [:show] do
+      link_to("New Icon", new_admin_icon_path())
+  end
   # ========================== INDEX ==========================
   index do
     selectable_column

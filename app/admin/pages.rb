@@ -65,7 +65,7 @@ ActiveAdmin.register Page do
           table_for page.windows do
 
             column "Name" do |a|
-              link_to a.name, site_attribute_path(a.id)
+              link_to a.name, admin_window_path(a.id)
             end
             column :active
             column :window_type
