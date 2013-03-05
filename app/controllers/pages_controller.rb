@@ -21,7 +21,7 @@ class PagesController < ApplicationController
         end
       end
       @pages = Page.order('position, name ASC').all
-
+            Rails.logger.debug @pages.inspect
     end
   end
 
