@@ -10,13 +10,13 @@ ActiveAdmin.register Icon do
   filter :value
 
   action_item :only => [:show] do
-      link_to("New Icon", new_admin_icon_path())
+    link_to("New Icon", new_admin_icon_path())
   end
   # ========================== INDEX ==========================
   index do
     selectable_column
     column 'image' do |a|
-      image_tag "data:image/jpeg;base64,#{a.value}", :style=>"max-height: 30px;"
+      image_tag "data:image/jpeg;base64,#{a.value}", :style => "max-height: 30px;"
     end
     column :name
     default_actions
@@ -29,13 +29,23 @@ ActiveAdmin.register Icon do
     attributes_table do
       row :name
       row "image" do |a|
-        image_tag "data:image/jpeg;base64,#{a.value}", :style=>"max-height: 80px;"
+        image_tag "data:image/jpeg;base64,#{a.value}", :style => "max-height: 80px;"
       end
       row :created_at
       row :updated_at
     end
 
   end
+
+  # ========================= SIDEBARS ========================
+
+  sidebar :columns, :only => [:new, :edit] do
+    ul do
+      li link_to 'Base64 Encode by URL', 'http://www.greywyvern.com/code/php/binary2base64', :target => '_blank'
+      li link_to 'Base64 Encode Upload', 'http://http://www.base64-image.de/', :target => '_blank'
+    end
+  end
+
 
   # =========================== EDIT ==========================
   form do |f|
