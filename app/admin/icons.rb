@@ -41,6 +41,7 @@ ActiveAdmin.register Icon do
 
   sidebar :columns, :only => [:new, :edit] do
     ul do
+      li link_to 'Icon Finder', 'http://www.iconfinder.com/', :target => '_blank'
       li link_to 'Base64 Encode by URL', 'http://www.greywyvern.com/code/php/binary2base64', :target => '_blank'
       li link_to 'Base64 Encode Upload', 'http://http://www.base64-image.de/', :target => '_blank'
     end

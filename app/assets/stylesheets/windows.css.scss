@@ -31,12 +31,15 @@ h2 {
   cursor: pointer;
 }
 
-table {
-  width: 100%;
-}
+.panel-insert-table {
+  box-sizing: border-box;
 
-.panel-insert-table table {
-  margin-left: 15px;
+  margin-left: 0 15px;
+  width: 100%;
+
+  table {
+    margin-left: 15px;
+  }
 }
 
 .panel-insert {
@@ -66,8 +69,15 @@ table {
 
 }
 
+.icon-col {
+  padding: 0 4px 0 0;
+  text-align: right;
+}
+
 .items-col {
   color: #383838;
+  text-align: left;
+  padding: 0 15px 0 0;
   //font-weight: 650;
   a {
     color: #055f5f;
