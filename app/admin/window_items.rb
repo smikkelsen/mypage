@@ -30,7 +30,43 @@ ActiveAdmin.register WindowItem do
 
   # ========================= DETAILS =========================
 
+  action_item :only => :show do
+    link_to 'Build Defaults', build_defaults_admin_window_item_path(window_item)
+  end
+
+  member_action :build_defaults do
+    environments = [
+        { :name => 'Dev', :font_color => '#3F4F26' },
+        { :name => 'Beta', :font_color => '#3F4F26' },
+        { :name => 'Prod', :font_color => '#3F4F26' },
+    ]
+
+    environments.each do |env|
+      Rails.logger.debug '========================='
+      Rails.logger.debug env[:name]
+    end
+    #user = WindowItem.find(params[:id])
+    #parent = WindowItem.find(params[:id])
+    #dev = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Dev', :position => 1, :font_color => '#3F4F26', :children_layout => 'list-vertical')
+    #beta = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Beta', :position => 2, :font_color => '#273869', :children_layout => 'list-vertical')
+    #prod = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Prod', :position => 3, :font_color => '#571313', :children_layout => 'list-vertical')
+    #
+    #dev.save!
+    #beta.save!
+    #prod.save!
+    #
+    #admin = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Prod', :position => 3, :font_color => '#571313', :children_layout => 'list-vertical')
+    #cms = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Prod', :position => 3, :font_color => '#571313', :children_layout => 'list-vertical')
+    #public = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Prod', :position => 3, :font_color => '#571313', :children_layout => 'list-vertical')
+    #public_root = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Prod', :position => 3, :font_color => '#571313', :children_layout => 'list-vertical')
+    #root = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Prod', :position => 3, :font_color => '#571313', :children_layout => 'list-vertical')
+    #
+
+    redirect_to admin_window_item_path(), :notice => 'Defaults Added!'
+  end
+
   show :title => :name do
+
 
     attributes_table do
       row :window
@@ -45,6 +81,10 @@ ActiveAdmin.register WindowItem do
       row :name
       row :position
       row :link
+      row 'Font Color' do |a|
+        span '', :style => "background-color: #{a.font_color}; padding-left: 12px; margin-right: 10px;"
+        span a.font_color
+      end
       row :hover_text
       row :active
       row :icon
@@ -65,6 +105,10 @@ ActiveAdmin.register WindowItem do
             column :link
             column :icon
             column :window
+
+            column '' do |a|
+              crud_links a, WindowItem
+            end
           end
 
         end
