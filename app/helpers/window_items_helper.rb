@@ -2,7 +2,7 @@ module WindowItemsHelper
 
   def aa_flyout(item, parent_layout)
     text = ''
-    if item.link.empty?
+    if item.link.empty? || item.link.nil?
       text += "<div class='#{parent_layout} window-item-parent aa_flyout button clickable' style='#{set_color(item.font_color)}'>#{item.name}\r\n"
 
       sub_items = WindowItem.by_parent(item.id).active.active.order('position, name ASC')

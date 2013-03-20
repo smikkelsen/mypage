@@ -8,6 +8,7 @@ ActiveAdmin.register Window do
 
   # ========================= FILTERS =========================
   filter :name
+  filter :page
   filter :collapsible, :as => :select
   filter :icon_id, :as => :select
   filter :active, :as => :select
