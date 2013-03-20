@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
 
   before_save :set_default_page
 
-  has_many :windows
+  has_many :windows, :dependent => :destroy
 
   validates :name, :presence => true, :length => {:maximum => 64}
   validate :column_count
@@ -19,8 +19,7 @@ class Page < ActiveRecord::Base
   def set_default_page
     if self.default
       #self.update_all(:default => false)
-
-      Page.update_all("pages.default = true")
+      Page.update_all("pages.default = false")
     end
   end
 

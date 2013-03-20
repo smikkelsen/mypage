@@ -4,8 +4,8 @@ class Window < ActiveRecord::Base
 
   belongs_to :page
   belongs_to :icon
-  has_many :window_items
-  accepts_nested_attributes_for :window_items
+  has_many :window_items, :dependent => :destroy
+  accepts_nested_attributes_for :window_items, :allow_destroy => true
 
   COLUMNS = {:Top => 0, :Center1 => 1, :Center2 => 2, :Center3 => 3, :Center4 => 4, :Center5 => 5, :Center6 => 6, :Bottom => -1}
   WINDOW_TYPES = {"Default" => "default", "Directory" => "directory", "Search All" => "search_all", "Google Search / Window Search" => "google_search"}
@@ -21,5 +21,7 @@ class Window < ActiveRecord::Base
   validates :page_id, :presence => true
   validates :column_count, :presence => true
   validates :column_position, :presence => true
+
+
 
 end

@@ -6,7 +6,7 @@ class WindowItem < ActiveRecord::Base
   belongs_to :window
 
   belongs_to :parent_window_item, :class_name => 'WindowItem'
-  has_many :child_items, :foreign_key => 'parent_window_item_id', :class_name => 'WindowItem'
+  has_many :child_items, :foreign_key => 'parent_window_item_id', :class_name => 'WindowItem', :dependent => :destroy
   accepts_nested_attributes_for :child_items, :allow_destroy => true
 
   validates :name, :presence => true, :length => {:maximum => 50}

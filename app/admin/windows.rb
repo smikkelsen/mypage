@@ -13,6 +13,51 @@ ActiveAdmin.register Window do
   filter :active, :as => :select
   filter :page_position
 
+  # ======================== SIDE BARS ========================
+
+  sidebar :actions, :only => :show do
+    test = ''
+    test += button_to 'Add Default Site', add_default_site_admin_window_path(window), :method => :get
+    test += '<br>'
+    test.html_safe
+  end
+
+  # ========================= DETAILS =========================
+
+  #action_item :only => :show do
+  #  link_to 'Build Defaults', build_defaults_admin_window_item_path(window_item)
+  #end
+
+  member_action :add_default_site, :method => :get do
+    environments = [
+        {:name => 'Dev', :font_color => '#3F4F26', :host => 'http://localhost.com:3000'},
+        {:name => 'Beta', :font_color => '#273869', :host => 'http://beta.example.com'},
+        {:name => 'Prod', :font_color => '#571313', :host => 'http://example.com'},
+    ]
+    window = Window.find(params[:id])
+
+    main = WindowItem.new(:window_id => window.id, :name => 'New Window Item', :position => 1, :children_layout => 'list-horizontal')
+    main.save!
+    environments.each do |env|
+      parent = WindowItem.new(:parent_window_item_id => main.id, :name => env[:name], :position => 1, :font_color => env[:font_color], :children_layout => 'list-vertical')
+      parent.save!
+
+      admin = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Admin', :position => 1, :font_color => '', :children_layout => 'list-vertical', :link => "#{env[:host]}/admin")
+      admin.save!
+      cms = WindowItem.new(:parent_window_item_id => parent.id, :name => 'CMS', :position => 2, :font_color => '', :children_layout => 'list-vertical', :link => "#{env[:host]}/cms-admin")
+      cms.save!
+      public = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Public', :position => 3, :font_color => '', :children_layout => 'list-vertical')
+      public.save!
+      public_root = WindowItem.new(:parent_window_item_id => public.id, :name => 'Root', :position => 1, :font_color => '', :children_layout => 'list-vertical', :link => env[:host])
+      public_root.save!
+      root = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Root', :position => 4, :font_color => '', :children_layout => 'list-vertical', :link => env[:host])
+      root.save!
+
+    end
+
+    redirect_to admin_window_path(window.id), :notice => 'Defaults Added!'
+  end
+
   # ========================== INDEX ==========================
   index do
     #selectable_column
@@ -56,6 +101,10 @@ ActiveAdmin.register Window do
             column :link
             column :icon
             column :window
+
+            column '' do |a|
+              crud_links a, WindowItem
+            end
           end
         end
       end
