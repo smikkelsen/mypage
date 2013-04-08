@@ -2,8 +2,6 @@ module WindowItemsHelper
 
   def aa_flyout(item, parent_layout)
     text = ''
-    Rails.logger.error 'Something weird here?'
-    Rails.logger.error item.inspect
     if item.link.try(:empty?) || item.link.nil?
       text += "<div class='#{parent_layout} window-item-parent aa_flyout button clickable' style='#{set_color(item.font_color)}'>#{item.name}\r\n"
 

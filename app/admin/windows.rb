@@ -39,8 +39,8 @@ ActiveAdmin.register Window do
 
     main = WindowItem.new(:window_id => window.id, :name => 'New Window Item', :position => 1, :children_layout => 'list-horizontal')
     main.save!
-    environments.each do |env|
-      parent = WindowItem.new(:parent_window_item_id => main.id, :name => env[:name], :position => 1, :font_color => env[:font_color], :children_layout => 'list-vertical')
+    environments.each_with_index do |env, index|
+      parent = WindowItem.new(:parent_window_item_id => main.id, :name => env[:name], :position => index, :font_color => env[:font_color], :children_layout => 'list-vertical')
       parent.save!
 
       admin = WindowItem.new(:parent_window_item_id => parent.id, :name => 'Admin', :position => 1, :font_color => '', :children_layout => 'list-vertical', :link => "#{env[:host]}/admin")
