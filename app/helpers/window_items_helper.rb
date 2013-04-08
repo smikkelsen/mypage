@@ -4,7 +4,7 @@ module WindowItemsHelper
     text = ''
     Rails.logger.error 'Something weird here?'
     Rails.logger.error item.inspect
-    if item.link.empty? || item.link.nil?
+    if item.link.try(:empty?) || item.link.nil?
       text += "<div class='#{parent_layout} window-item-parent aa_flyout button clickable' style='#{set_color(item.font_color)}'>#{item.name}\r\n"
 
       sub_items = WindowItem.by_parent(item.id).active.active.order('position, name ASC')
