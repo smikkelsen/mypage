@@ -6,11 +6,13 @@ module WindowItemsHelper
       text += "<div class='#{parent_layout} window-item-parent aa_flyout button clickable' style='#{set_color(item.font_color)}'>#{item.name}\r\n"
 
       sub_items = WindowItem.by_parent(item.id).active.active.order('position, name ASC')
-      unless sub_items.nil?
+      unless sub_items.count < 1
         text += "  <div class='dropdown_menu_list_wrapper' style='display: none; '>\r\n"
         text += link_to (image_tag 'settings_lt.png', :class => 'settings flt-rt', :width => '15px'), admin_window_item_path(item.id), :target => '_blank'
         text += "    <ul class='dropdown_menu_list'>\r\n"
         sub_items.each do |sub|
+          Rails.logger.error 'Something weird here?'
+          Rails.logger.debug sub.inspect
           text += "      <li #{hover_text_if(sub.hover_text)} class='#{item.children_layout} #{hover_class_if(sub.hover_text)} '>\r\n"
           text += aa_flyout(sub, item.children_layout)
           text += "      </li>\r\n"
