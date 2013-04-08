@@ -12,7 +12,7 @@ module WindowItemsHelper
         text += "    <ul class='dropdown_menu_list'>\r\n"
         sub_items.each do |sub|
           Rails.logger.error 'Something weird here?'
-          Rails.logger.debug sub.inspect
+          Rails.logger.error sub.inspect
           text += "      <li #{hover_text_if(sub.hover_text)} class='#{item.children_layout} #{hover_class_if(sub.hover_text)} '>\r\n"
           text += aa_flyout(sub, item.children_layout)
           text += "      </li>\r\n"
