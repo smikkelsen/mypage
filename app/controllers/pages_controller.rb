@@ -14,6 +14,9 @@ class PagesController < ApplicationController
 
       if params[:page]
         @page = Page.find_by_id(params[:page])
+        session['page'] = @page.id
+      elsif session['page']
+        @page = Page.find_by_id(session['page'])
       else
         @page = Page.find_by_default(true)
         if @page.nil?
@@ -21,7 +24,6 @@ class PagesController < ApplicationController
         end
       end
       @pages = Page.order('position, name ASC').all
-            Rails.logger.debug @pages.inspect
     end
   end
 
