@@ -5,6 +5,7 @@ gem 'rails', '3.2.8'
 gem 'mysql2'
 
 gem 'coffee-script-source', '~> 1.4.0' # require older version until activeadmin updates broken assets
+gem 'devise', '3.0.3'
 gem 'activeadmin'
 gem 'active_admin_importable'
 
