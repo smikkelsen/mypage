@@ -24,7 +24,6 @@ gem 'jquery-ui-rails'
 gem 'sqlite3'
 
 group :test do
-  gem 'ZenTest', '4.8.3'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
